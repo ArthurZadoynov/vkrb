@@ -25,3 +25,15 @@ export type TeamState = State &
   Page & {
     data: Team[];
   };
+
+export type FiltersState = {
+    size: number[];
+    price: {
+        min?: number;
+        max?: number;
+    };
+    gender: {
+      male: boolean,
+      female: boolean,
+    }
+}
