@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import BasketSvg from "../../../assets/icons/basket.svg?react";
 
-export const DesktopMenu = () => {
+export const DesktopMenu = ({ openModal, data }) => {
   return (
     <ul>
       <li>
@@ -20,6 +20,12 @@ export const DesktopMenu = () => {
       </li>
       <li>
         <a href="#contact">Контакты</a>
+      </li>
+      <li>
+        <button onClick={openModal}>
+          Корзина <BasketSvg />
+          <div>{data ? data.length : null}</div>
+        </button>
       </li>
     </ul>
   );
