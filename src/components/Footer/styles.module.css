@@ -1,0 +1,28 @@
+footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: #444b58;
+
+  .footerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1180px;
+
+    img {
+      margin: 28px 0;
+    }
+
+    ul {
+      display: flex;
+      gap: 40px;
+
+      li {
+        list-style-type: none;
+        font-size: 14px;
+        color: #fff;
+      }
+    }
+  }
+}

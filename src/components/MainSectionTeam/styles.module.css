@@ -1,0 +1,56 @@
+section.containerTeam {
+  padding-bottom: 60px;
+  margin-top: 60px;
+  background-color: #484283;
+  position: relative;
+  z-index: 2;
+  min-height: 1150px;
+}
+
+.containerTeam svg {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.redTeamSvg {
+  z-index: -2;
+}
+
+.teamSvg {
+  z-index: -1;
+}
+
+.teamContent {
+  display: flex;
+  justify-content: space-around;
+}
+
+.teamInfo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1180px;
+
+  & h2 {
+    font-family: "Intro-Bold", sans-serif;
+    font-size: 30px;
+    color: #fff;
+    padding-left: 4px;
+    margin-top: 60px;
+  }
+}
+
+.teamCard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 40px;
+  margin-top: 40px;
+
+  & div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

@@ -1,0 +1,49 @@
+:root {
+  max-width: 1920px;
+}
+
+@font-face {
+  font-family: "Intro-book";
+  src: url("./fonts/Intro-Book.woff2"), url("./fonts/Intro-Book.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Intro-Regular";
+  src: url("./fonts/Intro-Regular.woff2"), url("./fonts/Intro-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Intro-Bold";
+  src: url("./fonts/Intro-Bold.woff2"), url("./fonts/Intro-Bold.ttf");
+  font-weight: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Intro-book", sans-serif;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background: #f14f4f;
+}
+
+button:hover {
+  background: #cc4949;
+}
+
+button:active {
+  background: #8c2828;
+}

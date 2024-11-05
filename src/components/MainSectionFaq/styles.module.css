@@ -1,0 +1,24 @@
+.containerFaq {
+    display: flex;
+    justify-content: space-around;
+    margin: 60px 0;
+
+    & .faqs {
+        width: 100%;
+        max-width: 1180px;
+
+        & .FaqContent {
+            max-width: 1030px;
+
+            & h2 {
+                font-family: 'Intro-Bold', sans-serif;
+                font-size: 30px;
+                color: #444b58;
+            }
+
+            & .accordeonContent {
+                padding: 40px 0 0 150px;
+            }
+        }
+    }
+}

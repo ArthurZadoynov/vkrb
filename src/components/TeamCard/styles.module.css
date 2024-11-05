@@ -1,0 +1,29 @@
+.cardImage {
+    width: 380px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.cardContent {
+    & h3 {
+        font-family: 'Intro-Bold', sans-serif;
+        font-size: 24px;
+        color: #fff;
+    }
+
+    & span {
+        font-size: 16px;
+        color: #fff; 
+    }
+}
+
+/* .cardContent h3 {
+    font-family: 'Intro-Bold', sans-serif;
+    font-size: 24px;
+    color: #fff;
+} */
+
+/* .cardContent span {
+    font-size: 16px;
+    color: #fff;
+} */

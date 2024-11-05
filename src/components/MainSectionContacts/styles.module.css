@@ -1,0 +1,137 @@
+section.containerContacts {
+  margin-bottom: 60px;
+  padding: 60px 0;
+  background: #f3f6f6;
+}
+
+.contacts {
+  display: flex;
+  justify-content: space-around;
+}
+
+.contactsContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1180px;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    font-family: "Intro-Bold", sans-serif;
+    font-size: 30px;
+    color: #444b58;
+  }
+
+  > a {
+    font-family: "Intro-Reagular", sans-serif;
+    font-size: 30px;
+    line-height: 140%;
+    color: #444b58;
+    margin: 20px 0px 10px 0px;
+    max-width: 235px;
+  }
+
+  a + p {
+    font-size: 18px;
+    line-height: 140%;
+    color: #444b58;
+    margin-bottom: 40px;
+  }
+
+  div .department {
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+    gap: 10px;
+
+    div {
+      display: inline-block;
+      position: relative;
+
+      img {
+        border-radius: 100%;
+        box-shadow: 2px 4px 10px 0 rgba(0, 13, 84, 0.2);
+      }
+
+      span {
+        position: absolute;
+        bottom: 150%;
+        left: 50%;
+        visibility: hidden;
+        background: #fff;
+        border-radius: 4px;
+        width: 426px;
+        font-size: 14px;
+        line-height: 140%;
+        padding-left: 5px;
+        text-transform: none;
+        color: #444b58;
+        z-index: 1;
+        margin-left: -35px;
+        box-shadow: 4px 8px 20px 0 rgba(0, 13, 84, 0.2);
+
+        &::after {
+          position: absolute;
+          top: 100%;
+          right: 90%;
+          content: " ";
+          margin-left: 0px;
+          border-width: 8px;
+          border-style: solid;
+          border-color: #fff transparent transparent transparent;
+        }
+      }
+
+      &:hover span {
+        visibility: visible;
+      }
+    }
+  }
+  .messengers {
+    display: flex;
+    gap: 20px;
+
+    a img {
+      display: flex;
+    }
+  }
+}
+
+.department {
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #b2b5bb;
+}
+
+.map {
+  position: relative;
+  overflow: hidden;
+
+  a {
+    color: #eee;
+    font-size: 12px;
+    position: absolute;
+  }
+
+  > a {
+    top: 0px;
+  }
+
+  a + a {
+    top: 14px;
+  }
+
+  iframe {
+    width: 680px;
+    height: 497px;
+    position: relative;
+    border: none;
+  }
+}

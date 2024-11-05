@@ -1,0 +1,178 @@
+.no-pointer {
+  pointer-events: none;
+
+  > span {
+    height: 528px;
+    background-color: #484283;
+  }
+
+  > div {
+    background-color: #484283;
+    opacity: 0.6;
+  }
+}
+
+footer.no-pointer {
+  display: none;
+}
+
+.bg {
+  display: flex;
+  margin-top: -620px;
+  background-color: #444b58;
+  min-height: 1300px;
+}
+
+.sneaker_container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 120px;
+  max-width: 1180px;
+  padding: 40px 5px 40px 40px;
+  background-color: #ffffff;
+
+  .content {
+    display: flex;
+    gap: 20px;
+
+    img {
+      max-width: 538px;
+    }
+
+    .rightContent {
+      max-width: 450px;
+
+      > span {
+        font-size: 16px;
+        color: #b2b5bb;
+
+        > span {
+          color: #444b58;
+        }
+
+        &.inStock {
+          margin-left: 50px;
+        }
+      }
+
+      h2 {
+        font-size: 24px;
+        line-height: 140%;
+        margin-top: 38px;
+        color: #444b58;
+      }
+
+      .stars {
+        margin-top: 25px;
+
+        span {
+          display: flex;
+          gap: 3px;
+          color: #fd0101;
+          font-size: 20px;
+        }
+      }
+
+      .size {
+        margin-top: 39px;
+        color: #444b58;
+      }
+
+      > ul {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        list-style: none;
+        gap: 10px;
+        margin-top: 4px;
+        color: #444b58;
+
+        li {
+          display: flex;
+          border: 1px solid #b2b5bb;
+          align-items: center;
+          border-radius: 4px;
+          padding: 10px 26px;
+          width: 70px;
+          height: 32px;
+        }
+      }
+
+      & p.price {
+        display: flex;
+        align-items: center;
+        gap: 23px;
+        margin-top: 27px;
+
+        & span:first-child {
+          font-family: "Intro-Bold", sans-serif;
+          font-size: 30px;
+          color: #444b58;
+        }
+
+        & span:last-child {
+          font-size: 16px;
+          color: #b2b5bb;
+        }
+      }
+
+      button {
+        border-radius: 4px;
+        padding: 22px 0;
+        max-width: 430px;
+        width: 100%;
+        font-size: 16px;
+        color: #fff;
+        margin-top: 70px;
+      }
+
+      .order {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .bottomContent {
+    display: flex;
+    margin-top: 50px;
+    gap: 114px;
+
+    & div:first-child {
+      max-width: 430px;
+
+      & h3 {
+        padding-bottom: 24px;
+      }
+
+      & p {
+        font-size: 16px;
+        line-height: 140%;
+        color: #444b58;
+      }
+    }
+
+    & div:last-child {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      max-width: 241px;
+
+      & h3 {
+        padding-bottom: 13px;
+      }
+
+      & p {
+        font-size: 16px;
+        color: #444b58;
+      }
+    }
+
+    > div h3 {
+      font-size: 24px;
+      color: #444b58;
+    }
+  }
+}

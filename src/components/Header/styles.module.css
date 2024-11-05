@@ -1,0 +1,43 @@
+header {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+
+  span {
+    position: absolute;
+    width: 100%;
+    background: #484283;
+    height: 84px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    max-width: 1180px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    background: #484283;
+
+    img {
+      margin: 20px 0;
+    }
+
+    ul {
+      display: flex;
+      gap: 40px;
+
+      li {
+        list-style-type: none;
+        font-size: 14px;
+        color: #fff;
+      }
+    }
+  }
+}
+
+header.container {
+  width: 1920px;
+  background: #484283;
+}

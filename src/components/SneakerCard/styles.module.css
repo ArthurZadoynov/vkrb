@@ -1,0 +1,39 @@
+.productImage {
+  max-width: 280px;
+  max-height: 293px;
+  object-fit: contain;
+}
+
+.wrapper {
+  display: none;
+}
+
+.productCard {
+  position: relative;
+}
+
+.iconView {
+  position: absolute;
+  top: 30%;
+  left: 14%;
+}
+
+.iconAdd {
+  position: absolute;
+  top: 30%;
+  left: 57%;
+}
+
+.catalogImage:hover .wrapper {
+  display: block;
+  animation: appearance 0.3s ease;
+}
+
+@keyframes appearance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
