@@ -5,6 +5,7 @@ section.containerProductSelection {
 .containerProductSelection {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .sectionSelection {
@@ -44,14 +45,14 @@ section.containerProductSelection {
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 70px;
   grid-row-gap: 20px;
+  padding: 0 5px;
+  height: 100%;
 }
 
 .topBorder,
 .bottomBorder {
   display: flex;
   border: 1px solid #808080;
-  max-width: 980px;
-  height: 0px;
 }
 
 .bottomBorder {
@@ -125,7 +126,8 @@ section.containerProductSelection {
 
   img {
     margin-top: 22px;
-    max-width: 976px;
+    max-width: calc(100% - 40px);
+    height: auto;
   }
 }
 
@@ -139,7 +141,7 @@ section.containerProductSelection {
       border: 1px solid black;
       padding: 4px;
       max-height: 325px;
-      max-width: 970px;
+      max-width: calc(100% - 40px);
       font-size: 16px;
       color: #444b58;
     }
@@ -152,7 +154,8 @@ section.containerProductSelection {
   border-radius: 4px;
   max-width: 655px;
   margin-top: 24px;
-  padding: 40px 110px 40px 40px;
+  margin-bottom: 35px;
+  padding: 40px 0px 40px 40px;
   background: #dbbba9;
 
   div {
@@ -208,6 +211,7 @@ section.containerProductSelection {
         width: 220px;
         height: 60px;
         margin-top: 20px;
+        cursor: pointer;
 
         &:hover {
           background: #cc4949;
@@ -218,5 +222,114 @@ section.containerProductSelection {
         }
       }
     }
+  }
+}
+
+@media (max-width: 1200px) {
+  .sectionSelection {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .infoSelection {
+    grid-column-gap: 40px;
+  }
+
+  .slide2 {
+    div {
+      div {
+        gap: 50px;
+      }
+    }
+  }
+
+  .orderForm {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 960px) {
+  .sectionSelection {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .slide2 {
+    padding: 0 10px;
+
+    div {
+      max-height: auto;
+
+      div {
+        gap: 20px;
+      }
+    }
+
+    img {
+      max-width: calc(100% - 20px);
+    }
+  }
+
+  .orderForm {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media (max-width: 620px) {
+  .slide2 {
+    div {
+      div {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 0;
+        gap: 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .sectionSelection {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .infoSelection {
+    display: block;
+    max-height: 220px;
+    overflow-y: overlay;
+  }
+
+  slide2 {
+    padding: 0 5px;
+
+    div {
+      div {
+        gap: 10px;
+      }
+    }
+
+    img {
+      max-width: calc(100% - 10px);
+    }
+  }
+
+  .slide3 {
+    padding: 0 2px;
+
+    div {
+      height: auto;
+
+      .field {
+        max-height: 195px;
+      }
+    }
+  }
+
+  .orderForm {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }

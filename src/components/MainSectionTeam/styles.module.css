@@ -54,3 +54,56 @@ section.containerTeam {
     gap: 20px;
   }
 }
+
+@media (max-width: 1200px) {
+  .teamCard {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 60px;
+    grid-row-gap: 30px;
+  }
+
+  .teamInfo {
+    align-items: center;
+  }
+}
+
+@media (max-width: 800px) {
+  section.containerTeam {
+    min-height: 800px;
+    padding-bottom: 30px;
+    margin-top: 30px;
+  }
+
+  .teamCard {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 15px;
+    padding-left: 5px;
+
+    div {
+      max-width: 200px;
+      gap: 10px;
+    }
+  }
+
+  .teamInfo h2 {
+    font-size: 24px;
+    margin-top: 30px;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .teamCard {
+    grid-template-columns: repeat(2, 1fr);
+    div {
+      gap: 5px;
+    }
+  }
+
+  .teamInfo h2 {
+    font-size: 20px;
+    margin-top: 20px;
+    padding-left: 0;
+  }
+}

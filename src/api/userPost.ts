@@ -1,4 +1,4 @@
-import axios from "axios";
+import { instance } from "./axiosInstance";
 
 export type FormType = {
   user_name: string;
@@ -7,7 +7,7 @@ export type FormType = {
 
 export const postData = async (data: FormType) => {
   try {
-    await axios.post(`https://487fa880b8d6bbea.mokky.dev/users`, data);
+    await instance.post(`/users`, data);
     alert("Запрос принят, в ближайше время с Вами свяжемся!");
   } catch (error) {
     console.error("Произошла ошибка при отправке данных на сервер", error);

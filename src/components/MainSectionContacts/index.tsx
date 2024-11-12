@@ -29,10 +29,10 @@ export const MainSectionContacts = () => {
             <a href="tel: +7 800 789 89 89">+7 800 789 89 89</a>
             <p>г. Санкт-Петербург, 2-я Комсомольская, 43</p>
             <div className={styles.messengers}>
-              <a href="https:/vk.com" target="_blank">
+              <a href="https:/vk.com" target="_blank" rel="noopener noreferrer">
                 <img src={VK} alt="VK" />
               </a>
-              <a href="#" target="_blank">
+              <a href="#" target="_blank" rel="noopener noreferrer">
                 <img src={Instagram} alt="Instagram" />
               </a>
             </div>
@@ -45,7 +45,10 @@ export const MainSectionContacts = () => {
               2-я Комсомольская улица, 43 на карте Санкт‑Петербурга —
               Яндекс Карты
             </a>
-            <iframe src="https://yandex.ru/map-widget/v1/?ll=30.144665%2C59.831144&mode=whatshere&whatshere%5Bpoint%5D=30.142152%2C59.830499&whatshere%5Bzoom%5D=17&z=18.24?lang=ru_RU"></iframe>
+            <iframe
+              title="MapYandex"
+              src="https://yandex.ru/map-widget/v1/?ll=30.144665%2C59.831144&mode=whatshere&whatshere%5Bpoint%5D=30.142152%2C59.830499&whatshere%5Bzoom%5D=17&z=18.24?lang=ru_RU"
+            ></iframe>
           </div>
         </div>
       </div>

@@ -167,7 +167,7 @@ export const MainSectionProductSelection = () => {
                     />
                     {errors.user_email && <p>{errors.user_email.message}</p>}
                   </label>
-                  <input type="submit" />
+                  <input type="submit" value="Получить" />
                 </form>
               </div>
             </div>

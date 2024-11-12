@@ -1,44 +1,58 @@
 .accordeon {
-    border-top: 1px solid #242424;
+  border-top: 1px solid #242424;
 
-    &:last-child {
-        border-bottom: 1px solid #242424;
+  &:last-child {
+    border-bottom: 1px solid #242424;
+  }
+
+  & div input,
+  div p {
+    display: none;
+  }
+
+  & div label {
+    display: block;
+    padding: 30px 0px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #242424;
+    font-family: "Intro-Bold", sans-serif;
+
+    &::after {
+      content: url("../../images/plus.png");
+      float: right;
     }
+  }
 
-    & div input, div p{
-        display: none;
+  & div p {
+    padding-bottom: 18px;
+    line-height: 140%;
+    color: rgba(36, 36, 36, 0.5);
+  }
+
+  & div :checked + label {
+    padding-bottom: 25px;
+
+    &::after {
+      content: url("../../images/krestik.png");
     }
+  }
 
+  & div :checked ~ p {
+    display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  .accordeon {
     & div label {
-        display: block;
-        padding: 30px 0px;
-        font-size: 20px;
-        cursor: pointer;
-        color: #242424;
-        font-family: 'Intro-Bold', sans-serif;
-
-        &::after {
-            content: url('../../images/plus.png');
-            float: right;
-        }
+      font-size: 16px;
+      padding: 15px 0;
     }
 
     & div p {
-        padding-bottom: 18px;
-        line-height: 140%;
-        color: rgba(36, 36, 36, 0.5);
+      padding-bottom: 10px;
+      font-size: 14px;
     }
-
-    & div :checked + label {
-        padding-bottom: 25px;
-
-        &::after {
-            content: url('../../images/krestik.png');
-        }
-    }
-
-    & div :checked ~ p {
-        display: flex;
-    }
+  }
 }
-

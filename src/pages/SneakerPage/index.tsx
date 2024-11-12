@@ -1,13 +1,34 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { Error } from "../../components/Error";
 import { Loader } from "../../components/Loader";
 import { sneakerSelector } from "../../Redux/sneaker/sneakerSelector";
 import { useAppDispatch } from "../../Redux/store";
 import "./styles.css";
+import styles from "./styles.module.css";
 import { getSneaker } from "../../api/sneaker";
 import GalochkaSvg from "../../assets/icons/galochka.svg?react";
+import { postBasket } from "../../api/basket";
+
+interface SizeSelectedProps {
+  number: number;
+}
+
+const SizeSelected: React.FC<SizeSelectedProps> = ({ number }) => {
+  const [selected, setSelected] = useState(false);
+  const changeSelectedHandler = () => {
+    setSelected(!selected);
+  };
+  return (
+    <li
+      onClick={changeSelectedHandler}
+      className={`${selected ? styles.selected : ""}`}
+    >
+      {number}
+    </li>
+  );
+};
 
 export const SneakerPage = () => {
   const { id } = useParams() as { id: string };
@@ -23,21 +44,11 @@ export const SneakerPage = () => {
     const headerElement = document.querySelector("header");
     const footerElement = document.querySelector("footer");
 
-    if (!isLoading) {
-      // Добавляем класс no-pointer к header при загрузке
-      if (headerElement && footerElement) {
-        headerElement.classList.add("no-pointer");
-        footerElement.classList.add("no-pointer");
-      }
-    } else {
-      // Убираем класс no-pointer от header после загрузки
-      if (headerElement && footerElement) {
-        headerElement.classList.remove("no-pointer");
-        footerElement.classList.remove("no-pointer");
-      }
+    if (headerElement && footerElement) {
+      headerElement.classList.toggle("no-pointer", !isLoading);
+      footerElement.classList.toggle("no-pointer", !isLoading);
     }
 
-    // Убираем класс при возвращении
     return () => {
       if (headerElement && footerElement) {
         headerElement.classList.remove("no-pointer");
@@ -47,7 +58,7 @@ export const SneakerPage = () => {
   }, [isLoading]);
 
   const handleBgClick = () => {
-    navigate("/Vkrb/"); // Переход на главную страницу
+    navigate("/Vkrb/");
   };
 
   return (
@@ -73,14 +84,19 @@ export const SneakerPage = () => {
               <p className="size">Выберите размер:</p>
               <ul>
                 {data.sizes.map((number, id) => (
-                  <li key={id}>{number}</li>
+                  <SizeSelected number={number} key={id} />
                 ))}
               </ul>
               <p className="price">
                 <span>{data.price}</span>
                 <span>{data.oldPrice}</span>
               </p>
-              <button>Заказать</button>
+              <Link to={`/Vkrb/basket`}>
+                <button onClick={() => dispatch(postBasket(data))}>
+                  Заказать
+                </button>
+              </Link>
+
               <div className="order">
                 <span>
                   <GalochkaSvg /> Бесплатная доставка до двери{" "}

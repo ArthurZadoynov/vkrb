@@ -21,10 +21,17 @@ section.containerAbout {
   align-items: center;
   width: 100%;
   max-width: 1180px;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
 }
 
 .aboutText {
   position: relative;
+  min-width: 300px;
 
   & h2 {
     font-family: "Intro-Bold", sans-serif;
@@ -40,26 +47,13 @@ section.containerAbout {
   }
 }
 
-/* .aboutText h2 {
-  font-family: 'Intro-Bold', sans-serif;
-  font-size: 30px;
-  color: #fff;
-} */
-
-/* .aboutText p {
-  max-width: 380px;
-  margin-top: 20px;
-  line-height: 140%;
-  color: #fff;
-} */
-
 .logoAboutUs {
   display: flex;
   align-items: center;
   position: absolute;
   margin-top: 20px;
   gap: 20px;
-  left: 75%;
+  left: 45%;
 
   & span {
     border: 3px solid #fff;
@@ -68,8 +62,44 @@ section.containerAbout {
   }
 }
 
-/* .logoAboutUs span {
-  border: 3px solid #fff;
-  width: 30px;
-  height: 0px;
-} */
+@media (max-width: 1000px) {
+  .aboutContent {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logoAboutUs {
+    left: auto;
+    margin-top: 10px;
+    justify-content: center;
+  }
+
+  .aboutText {
+    text-align: center;
+  }
+
+  .aboutUs {
+    > img {
+      max-width: 300px;
+    }
+  }
+}
+
+@media (max-width: 860px) {
+  .containerAbout {
+    & svg {
+      max-width: 300px;
+      height: 224px;
+    }
+  }
+}
+
+@media (max-width: 725px) {
+  .aboutUs {
+    flex-direction: column;
+
+    > img {
+      padding-top: 45px;
+    }
+  }
+}

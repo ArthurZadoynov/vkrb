@@ -1,6 +1,5 @@
 .container {
   position: absolute;
-  top: 20px;
   right: 20px;
   z-index: 10;
 }
@@ -32,7 +31,7 @@
   height: 4px;
   width: 100%;
   border-radius: 10px;
-  background: red;
+  background: #fff;
 }
 
 .line1 {
@@ -61,4 +60,12 @@
 .container input[type="checkbox"]:checked ~ .hamburger_lines .line3 {
   background: white;
   transform: rotate(-45deg);
+}
+
+@media (max-width: 980px) {
+  .container {
+    position: absolute;
+    right: 100px;
+    z-index: 10;
+  }
 }

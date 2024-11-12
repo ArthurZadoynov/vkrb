@@ -48,6 +48,11 @@ export const MainSectionQuestionsForm = () => {
                       value: 2,
                       message: "Имя должно содержать не менее 2 символов",
                     },
+                    maxLength: {
+                      value: 30,
+                      message:
+                        "Имя должно содержать не более не более 30 символов",
+                    },
                   })}
                 />
                 {errors.user_name && <p>{errors.user_name.message}</p>}

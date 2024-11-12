@@ -6,23 +6,13 @@ import { MobileMenu } from "./MobileMenu";
 import { DesktopMenu } from "./DesktopMenu";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { sneakersSelector } from "../../Redux/sneakers/sneakersSelector";
-
-const Modal = ({ isOpen, children, onClose }) => {
-  if (!isOpen) return null;
-
-  return (
-    isOpen && (
-      <div className={styles.modal} onClick={onClose}>
-        <div onClick={(e) => e.stopPropagation()}>{children}</div>
-      </div>
-    )
-  );
-};
+import { ModalWindow } from "./ModalBasketHeader";
+import BasketSvg from "../../assets/icons/basket.svg?react";
+import { basketSelector } from "../../Redux/basket/basketSelector";
 
 export const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { data } = useSelector(sneakersSelector);
+  const { data } = useSelector(basketSelector);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -31,50 +21,32 @@ export const Header = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-
   const isMobile = useIsMobile();
+
   return (
     <header>
       <span></span>
-      <div className={styles.container}>
-        <Link to="/Vkrb">
-          <img src={logo} alt="logo" />
-        </Link>
-        {isMobile ? (
-          <MobileMenu />
-        ) : (
-          <DesktopMenu openModal={openModal} data={data} />
-        )}
-
-        <Modal isOpen={isModalOpen} onClose={closeModal}>
-          <div className={styles.modalContent}>
-            <div className={styles.sneakerBasket}>
-              {data?.map((item) => {
-                const { imgUrl, gender, title, price } = item;
-                return (
-                  <div className={styles.sneakerBlock}>
-                    <div>
-                      <img src={imgUrl} alt="sneaker" />
-                    </div>
-                    <div className={styles.sneakerContentBlock}>
-                      <p>{gender}</p>
-                      <p>{title}</p>
-                      <p>{price}</p>
-                    </div>
-                    <button>Удалить</button>
-                  </div>
-                );
-              })}
-            </div>
-            <div className={styles.bottomModal}>
-              <p>
-                Итого: <span>12312</span>
-              </p>
-              <button>Перейти в корзину</button>
+      <div className={styles.bg}>
+        <div className={styles.bgHeader}>
+          <div className={styles.container}>
+            <Link to="/Vkrb">
+              <img src={logo} alt="logo" />
+            </Link>
+            <div className={styles.navHeader}>
+              {isMobile ? (
+                <MobileMenu openModal={openModal} data={data} />
+              ) : (
+                <DesktopMenu openModal={openModal} data={data} />
+              )}
+              <button className={styles.basket} onClick={openModal}>
+                Корзина <BasketSvg />
+                <span>{data ? data.length : null}</span>
+              </button>
             </div>
           </div>
-        </Modal>
+        </div>
       </div>
+      <ModalWindow isOpen={isModalOpen} onClose={closeModal} data={data} />
     </header>
   );
 };

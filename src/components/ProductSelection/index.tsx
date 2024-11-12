@@ -17,6 +17,7 @@ export const ProductSelection: FC<Props> = ({ id }) => {
       <img src={PhotoSneaker} alt="" />
       <span>
         <input
+          title="sneakers"
           type="checkbox"
           className={styles.customCheckbox}
           name="sneakers"
@@ -34,6 +35,7 @@ export const SizeSelection: FC<SizeProps> = ({ id, text }) => {
     <div className={styles.selectionSize}>
       <span>
         <input
+          title="size"
           type="checkbox"
           className={styles.customCheckbox}
           name="size"

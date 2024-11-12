@@ -1,9 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import { instance } from "./axiosInstance";
 
 export const fetchTeam = createAsyncThunk("team/fetch", async () => {
   try {
-    const response = await axios.get("https://487fa880b8d6bbea.mokky.dev/team");
+    const response = await instance.get("/team");
     return response.data;
   } catch (error) {
     console.error("Произошла ошибка при получении Команды:", error);

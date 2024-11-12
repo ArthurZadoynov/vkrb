@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 
 export const MainSectionTitle = () => {
@@ -9,7 +10,9 @@ export const MainSectionTitle = () => {
           Мы продаем кроссовки брендов Nike, Adidas, Puma, Reebok, Converse и
           многие другие по низким ценам
         </p>
-        <button>Перейти к покупкам</button>
+        <Link to={`/Vkrb/basket`} className={styles.wrapperBasket}>
+          <button>Перейти к покупкам</button>
+        </Link>
       </div>
     </section>
   );

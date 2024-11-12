@@ -1,7 +1,3 @@
-:root {
-  max-width: 1920px;
-}
-
 @font-face {
   font-family: "Intro-book";
   src: url("./fonts/Intro-Book.woff2"), url("./fonts/Intro-Book.ttf");
@@ -18,6 +14,14 @@
   font-family: "Intro-Bold";
   src: url("./fonts/Intro-Bold.woff2"), url("./fonts/Intro-Bold.ttf");
   font-weight: 700;
+}
+
+:root {
+  max-width: 1920px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 * {
@@ -37,13 +41,71 @@ a {
 
 button {
   border: none;
-  background: #f14f4f;
+  cursor: pointer;
 }
 
-button:hover {
-  background: #cc4949;
+.noUi-connects {
+  background: #7b818c84 !important;
 }
 
-button:active {
-  background: #8c2828;
+.noUi-base {
+  height: 4px !important;
+}
+.noUi-base,
+.noUi-connects {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.noUi-connect {
+  background: #444b58 !important;
+}
+
+.noUi-connect,
+.noUi-origin {
+  will-change: transform !important;
+  position: absolute !important;
+  z-index: 1 !important;
+  top: 0 !important;
+  right: 0 !important;
+  transform-origin: 0 0 !important;
+  transform-style: flat !important;
+}
+
+.noUi-touch-area {
+  border: 1px solid #fff4ee !important;
+  border-radius: 4px !important;
+  width: 6px !important;
+  height: 20px !important;
+  background: #444b58 !important;
+  cursor: pointer;
+}
+
+.noUi-handle {
+  position: absolute !important;
+
+  &::before {
+    display: none !important;
+  }
+  &::after {
+    display: none !important;
+  }
+}
+
+.noUi-horizontal .noUi-handle {
+  right: 2px !important;
+  top: -10px !important;
+  width: 0px !important;
+  height: 0px !important;
+}
+
+.noUi-target {
+  background: none !important;
+  border-radius: none !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  &.noUi-horizontal {
+    height: 0px !important;
+  }
 }

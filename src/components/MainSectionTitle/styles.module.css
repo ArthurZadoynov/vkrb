@@ -9,7 +9,7 @@ h1 {
   font-size: 36px;
   line-height: 140%;
   max-width: 580px;
-  font-family: 'Intro-Bold', sans-serif;
+  font-family: "Intro-Bold", sans-serif;
   color: #fff;
 }
 
@@ -41,7 +41,7 @@ h1 {
     margin-left: 145px;
     margin-top: 85px;
     color: rgba(255, 255, 255, 0.12);
-    font-family: 'Intro-Bold', sans-serif;
+    font-family: "Intro-Bold", sans-serif;
   }
 
   & button {
@@ -52,7 +52,57 @@ h1 {
     font-size: 16px;
     margin-top: 40px;
     padding-bottom: 1px;
-    font-family: 'Intro-Regular', sans-serif;
+    font-family: "Intro-Regular", sans-serif;
     color: #fff;
+    background: #f14f4f;
+
+    &:hover {
+      background: #cc4949;
+    }
+
+    &:active {
+      background: #8c2828;
+    }
+  }
+}
+
+@media (max-width: 1150px) {
+  .info {
+    &::before {
+      margin-left: 20px;
+      font-size: 140px;
+      max-width: 700px;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .info {
+    &::before {
+      margin-left: 10px;
+      font-size: 85px;
+      top: -45px;
+      max-width: 300px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .info {
+    padding-left: 3px;
+
+    &::before {
+      right: 0;
+      font-size: 40px;
+      top: 15px;
+    }
+
+    & p {
+      margin-top: 10px;
+    }
+
+    & button {
+      margin-top: 5px;
+    }
   }
 }

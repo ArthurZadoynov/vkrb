@@ -1,12 +1,12 @@
+import styles from "./styles.module.css";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "../../Redux/store";
-import styles from "./styles.module.css";
 import { teamSelector } from "../../Redux/team/teamSelector";
 import { useEffect } from "react";
 import { fetchTeam } from "../../api/team";
 import { Loader } from "../Loader";
 import { Error } from "../Error";
-import { TeamCard } from "../TeamCard";
+import { TeamCard } from "../MainTeamCard";
 import EllipseTeamSvg from "../../assets/icons/ellipseTeam.svg?react";
 import RedEllipseTeamSvg from "../../assets/icons/redEllipseTeam.svg?react";
 

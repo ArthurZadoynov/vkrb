@@ -5,6 +5,7 @@ import { Home } from "./pages/Home";
 import { SneakerPage } from "./pages/SneakerPage";
 import { NotFound } from "./pages/NotFound";
 import { Loader } from "./components/Loader";
+import { BasketPage } from "./pages/BasketPage";
 
 export const router = createBrowserRouter([
   {
@@ -15,6 +16,8 @@ export const router = createBrowserRouter([
       { index: true, element: <Home /> },
 
       { path: "sneaker/:id", element: <SneakerPage /> },
+
+      { path: "basket", element: <BasketPage /> },
 
       { path: "*", element: <NotFound /> },
     ],

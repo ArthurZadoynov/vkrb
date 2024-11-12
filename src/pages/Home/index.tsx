@@ -1,4 +1,3 @@
-import "./styles.css";
 import { MainSectionTitle } from "../../components/MainSectionTitle";
 import { MainSectionCatalog } from "../../components/MainSectionCatalog";
 import { MainSectionAboutUs } from "../../components/MainSectionAboutUs";

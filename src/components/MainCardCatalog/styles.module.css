@@ -1,0 +1,98 @@
+.productCard {
+  position: relative;
+  max-width: 280px;
+}
+
+.catalogImage {
+  &:hover .wrapperSneaker {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:hover .wrapperBasket {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  img.iconView {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: #444b58;
+    padding: 25px;
+    box-sizing: content-box;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -25px;
+      left: -25px;
+      width: 80px;
+      height: 80px;
+      background-color: #444b58;
+      border-radius: 50%;
+      z-index: -1;
+    }
+    &:active {
+      background: #31343c;
+    }
+  }
+}
+.productImage {
+  max-width: 280px;
+  max-height: 293px;
+  object-fit: contain;
+
+  + .wrapperSneaker {
+    visibility: hidden;
+    opacity: 0;
+    transition:
+      opacity 1s ease,
+      visibility 1s ease;
+
+    img {
+      position: absolute;
+      top: 30%;
+      left: 14%;
+    }
+  }
+}
+
+.wrapperBasket {
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    opacity 1s ease,
+    visibility 1s ease;
+
+  img {
+    position: absolute;
+    object-fit: contain;
+    box-sizing: border-box;
+    top: 30%;
+    left: 57%;
+    padding: 25px;
+  }
+
+  .iconAdd {
+    width: 30px;
+    height: 30px;
+    box-sizing: content-box;
+    background-color: #444b58;
+    border-radius: 50%;
+
+    &:active {
+      background: #31343c;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .productCard {
+    p,
+    h4 {
+      margin-left: 5px;
+    }
+  }
+}

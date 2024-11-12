@@ -13,15 +13,36 @@ footer {
     img {
       margin: 28px 0;
     }
+  }
+}
 
-    ul {
-      display: flex;
-      gap: 40px;
+.navFooter {
+  display: flex;
+  gap: 40px;
+  margin: 20px 0;
+  font-size: 14px;
+  color: #fff;
+}
 
-      li {
-        list-style-type: none;
-        font-size: 14px;
-        color: #fff;
+@media (max-width: 800px) {
+  .navFooter {
+    display: grid;
+    justify-items: start;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 5px;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 520px) {
+  footer {
+    .footerContainer {
+      justify-content: flex-start;
+      padding: 5px;
+      img {
+        display: none;
       }
     }
   }
