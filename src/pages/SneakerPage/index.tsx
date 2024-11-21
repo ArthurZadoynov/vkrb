@@ -16,14 +16,15 @@ interface SizeSelectedProps {
 }
 
 const SizeSelected: React.FC<SizeSelectedProps> = ({ number }) => {
-  const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState(false); // Хранит состояние выбранного размера (по умолчанию false)
   const changeSelectedHandler = () => {
-    setSelected(!selected);
+    // Функция для изменения состояния 'selected' при клике
+    setSelected(!selected); // Меняет состояние на противоположное
   };
   return (
     <li
-      onClick={changeSelectedHandler}
-      className={`${selected ? styles.selected : ""}`}
+      onClick={changeSelectedHandler} // Обработчик события клика
+      className={`${selected ? styles.selected : ""}`} // Применяет класс 'selected', если размер выбран
     >
       {number}
     </li>
@@ -31,26 +32,31 @@ const SizeSelected: React.FC<SizeSelectedProps> = ({ number }) => {
 };
 
 export const SneakerPage = () => {
-  const { id } = useParams() as { id: string };
-  const dispatch = useAppDispatch();
-  const navigate = useNavigate();
-  const { data, isLoading, isError } = useSelector(sneakerSelector);
+  // Основной компонент страницы кроссовок
+  const { id } = useParams() as { id: string }; // Получает параметр 'id' из URL
+  const dispatch = useAppDispatch(); // Получает функцию dispatch из Redux
+  const navigate = useNavigate(); // Получает функцию для навигации по страницам
+  const { data, isLoading, isError } = useSelector(sneakerSelector); // Получает данные о кроссовках, состояние загрузки и ошибки из Redux
 
   useEffect(() => {
-    dispatch(getSneaker(id));
+    // Эффект, который выполняется при изменении 'id'
+    dispatch(getSneaker(id)); // Запрашивает данные о кроссовках по 'id'
   }, [id]);
 
   useEffect(() => {
+    // Эффект, который управляет состоянием указателей на header и footer в зависимости от загрузки
     const headerElement = document.querySelector("header");
     const footerElement = document.querySelector("footer");
 
     if (headerElement && footerElement) {
+      // Добавляет/убирает класс 'no-pointer' в зависимости от состояния загрузки
       headerElement.classList.toggle("no-pointer", !isLoading);
       footerElement.classList.toggle("no-pointer", !isLoading);
     }
 
     return () => {
       if (headerElement && footerElement) {
+        // Возвращает функцию очистки, которая убирает класс при размонтировании компонента
         headerElement.classList.remove("no-pointer");
         footerElement.classList.remove("no-pointer");
       }
@@ -58,6 +64,7 @@ export const SneakerPage = () => {
   }, [isLoading]);
 
   const handleBgClick = () => {
+    // Обработчик клика для фона, который перенаправляет на главную страницу
     navigate("/Vkrb/");
   };
 
@@ -84,7 +91,8 @@ export const SneakerPage = () => {
               <p className="size">Выберите размер:</p>
               <ul>
                 {data.sizes.map((number, id) => (
-                  <SizeSelected number={number} key={id} />
+                  // Отображает список доступных размеров
+                  <SizeSelected number={number} key={id} /> // Использует компонент SizeSelected для каждого размера
                 ))}
               </ul>
               <p className="price">

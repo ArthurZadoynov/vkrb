@@ -12,19 +12,24 @@ const initialState: TeamState = {
   totalPages: 0,
 };
 
+// Создаем срез состояния для команды с помощью функции createSlice.
 const teamSlice = createSlice({
   name: "team",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
+    // Определяем дополнительные редюсеры для обработки асинхронных действий.
+    // Обрабатываем состояние при ожидании выполнения fetchTeam.
     builder.addCase(fetchTeam.pending, (state) => {
       state.isLoading = true;
       state.isError = false;
     });
+    // Обрабатываем состояние при успешном выполнении fetchTeam.
     builder.addCase(fetchTeam.fulfilled, (state, action) => {
-      state.data = action.payload;
+      state.data = action.payload; // Сохраняем полученные данные в состоянии.
       state.isLoading = false;
     });
+    // Обрабатываем состояние при неудачном выполнении fetchTeam.
     builder.addCase(fetchTeam.rejected, (state) => {
       state.isLoading = false;
       state.isError = true;
@@ -32,4 +37,4 @@ const teamSlice = createSlice({
   },
 });
 
-export default teamSlice.reducer;
+export default teamSlice.reducer; // Экспортируем редюсер команды по умолчанию для использования в store.

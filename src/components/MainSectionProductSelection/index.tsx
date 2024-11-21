@@ -1,14 +1,14 @@
 import styles from "./styles.module.css";
 import { ProductSelection, SizeSelection } from "../ProductSelection";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import "swiper/swiper-bundle.css";
-import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react"; // Импортируем необходимые компоненты из библиотеки Swiper для создания слайдера
+import "swiper/swiper-bundle.css"; // Импортируем стили для Swiper
+import { Pagination } from "swiper/modules"; // Импортируем модуль пагинации для Swiper
 import slide2Selection from "../../images/slide2Selection.png";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 export function SlideNextButton() {
-  const swiper = useSwiper();
+  const swiper = useSwiper(); // Получаем экземпляр Swiper для управления слайдером
 
   return (
     <button className={styles.nextBtn} onClick={() => swiper.slideNext()}>
@@ -24,20 +24,22 @@ type FormType = {
 
 export const MainSectionProductSelection = () => {
   const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
+    // Инициализация формы с помощью useForm из react-hook-form
+    register, // Функция для регистрации полей формы
+    handleSubmit, // Функция для обработки отправки формы
+    reset, // Функция для сброса формы
+    formState: { errors }, // Объект с ошибками валидации формы
   } = useForm<FormType>();
 
   const onSubmit: SubmitHandler<FormType> = () => {
+    // Функция, вызываемая при успешной отправке формы
     alert(
       "Спасибо за уделенное время, подготовленный каталог отправили на указанный вами Email"
     );
     reset();
   };
 
-  const [currentIndex, setCurrenIndex] = useState(0);
+  const [currentIndex, setCurrenIndex] = useState(0); // Состояние для отслеживания текущего индекса слайда
 
   return (
     <section id="selection" className={styles.containerProductSelection}>

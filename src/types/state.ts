@@ -1,15 +1,8 @@
-import { Sneaker, Team } from ".";
+import { Sneaker, Team, Page } from ".";
 
 type State = {
   isLoading: boolean;
   isError: boolean;
-};
-
-type Page = {
-  currentPage: number;
-  pageSize: number;
-  totalCount: number;
-  totalPages: number;
 };
 
 export type SneakerState = State & {

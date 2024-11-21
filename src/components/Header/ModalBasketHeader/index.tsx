@@ -29,7 +29,7 @@ const Modal: React.FC<{
   onClose: () => void;
   children: React.ReactNode;
 }> = ({ isOpen, children, onClose }) => {
-  if (!isOpen) return null;
+  if (!isOpen) return null; // Если модальное окно закрыто, возвращаем null (ничего не рендерим).
 
   return (
     <>
@@ -45,14 +45,16 @@ export const ModalWindow: React.FC<ModalProps> = ({
   onClose,
   data,
 }) => {
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch(); // Получаем функцию dispatch из Redux.
 
   const handleRemove = async (id: number): Promise<void> => {
-    dispatch(removeItem(id));
+    // Функция для удаления элемента из корзины по ID.
+    dispatch(removeItem(id)); // Вызываем action removeItem с переданным ID.
   };
 
   useEffect(() => {
-    dispatch(fetchBasket());
+    // Хук useEffect для выполнения побочного эффекта при монтировании компонента.
+    dispatch(fetchBasket()); // Вызываем action fetchBasket для загрузки данных корзины.
   }, []);
 
   return (

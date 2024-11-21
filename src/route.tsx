@@ -7,11 +7,12 @@ import { NotFound } from "./pages/NotFound";
 import { Loader } from "./components/Loader";
 import { BasketPage } from "./pages/BasketPage";
 
+// Создаем маршрутизацию с помощью функции createBrowserRouter и определяем маршруты приложения.
 export const router = createBrowserRouter([
   {
-    path: "Vkrb",
-    element: <Layout />,
-    loader: Loader,
+    path: "Vkrb", // базовый путь
+    element: <Layout />, // компонент Layout будет оборачивать дочерние маршруты
+    loader: Loader, // компонент Loader, который будет загружаться перед рендерингом маршрутов
     children: [
       { index: true, element: <Home /> },
 

@@ -22,10 +22,11 @@ const getNewGender = (gender: string) => {
 };
 
 export const BasketCard: FC<Props> = ({ data }) => {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useDispatch<AppDispatch>(); // Получаем dispatch функцию из Redux для отправки действий.
 
   const handleRemove = async (id: number): Promise<void> => {
-    dispatch(removeItem(id));
+    // Асинхронная функция для обработки удаления элемента по его идентификатору.
+    dispatch(removeItem(id)); // Вызываем действие removeItem с переданным id для удаления элемента из корзины.
   };
   return (
     <div className={styles.cardContent} key={data.id}>

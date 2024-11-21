@@ -21,7 +21,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /*применяем к html для плавного прокручивания страницы при переходе по якорным ссылкам*/
 }
 
 * {

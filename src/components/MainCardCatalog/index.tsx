@@ -13,7 +13,7 @@ type Props = {
 };
 
 export const SneakerCard: FC<Props> = ({ data }) => {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useDispatch<AppDispatch>(); // Получаем функцию dispatch для отправки действий в Redux с типизацией AppDispatch.
   return (
     <div className={styles.productCard} key={data.vendorСode}>
       <div className={styles.catalogImage}>
@@ -28,7 +28,7 @@ export const SneakerCard: FC<Props> = ({ data }) => {
         <div className={styles.wrapperBasket}>
           <button
             className={styles.addBasket}
-            onClick={() => dispatch(postBasket(data))}
+            onClick={() => dispatch(postBasket(data))} // Обработчик клика, который отправляет действие postBasket с данными кроссовок в Redux.
           >
             <img
               className={styles.iconAdd}

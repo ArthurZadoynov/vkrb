@@ -11,12 +11,13 @@ import EllipseTeamSvg from "../../assets/icons/ellipseTeam.svg?react";
 import RedEllipseTeamSvg from "../../assets/icons/redEllipseTeam.svg?react";
 
 export const MainSectionTeam = () => {
-  const dispatch = useAppDispatch();
-  const { data, isLoading, isError } = useSelector(teamSelector);
+  const dispatch = useAppDispatch(); // Получаем dispatch функцию из Redux для отправки действий
+  const { data, isLoading, isError } = useSelector(teamSelector); // Извлекаем данные команды, состояние загрузки и ошибки из состояния Redux
 
   useEffect(() => {
-    dispatch(fetchTeam());
-  }, []);
+    // Используем хук useEffect для загрузки данных команды при первом рендере компонента
+    dispatch(fetchTeam()); // Отправляем действие для получения данных команды
+  }, []); // Пустой массив зависимостей означает, что эффект выполнится только один раз
 
   return (
     <section id="team" className={styles.containerTeam}>

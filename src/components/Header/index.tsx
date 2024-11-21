@@ -11,8 +11,8 @@ import BasketSvg from "../../assets/icons/basket.svg?react";
 import { basketSelector } from "../../Redux/basket/basketSelector";
 
 export const Header = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const { data } = useSelector(basketSelector);
+  const [isModalOpen, setIsModalOpen] = useState(false); // Создаем состояние isModalOpen для управления открытием и закрытием модального окна, начальное значение - false.
+  const { data } = useSelector(basketSelector); // Используем селектор basketSelector для получения данных о корзине из Redux.
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -21,7 +21,7 @@ export const Header = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile(); // Используем хук useIsMobile для определения, является ли текущее устройство мобильным.
 
   return (
     <header>

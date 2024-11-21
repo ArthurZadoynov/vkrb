@@ -15,16 +15,18 @@ export type FormType = {
 };
 
 export const MainSectionQuestionsForm = () => {
+  // Инициализируем хук useForm для управления состоянием формы
   const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
+    register, // Метод для регистрации полей ввода
+    handleSubmit, // Метод для обработки отправки формы
+    reset, // Метод для сброса формы
+    formState: { errors }, // Объект состояния формы с ошибками валидации
   } = useForm<FormType>();
 
   const onSubmit: SubmitHandler<FormType> = (data) => {
-    postData(data);
-    reset();
+    // Функция, вызываемая при успешной отправке формы
+    postData(data); // Отправляет данные формы на сервер
+    reset(); // Сбрасывает поля формы после отправки
   };
 
   return (
